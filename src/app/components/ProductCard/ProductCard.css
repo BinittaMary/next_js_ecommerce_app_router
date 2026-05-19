@@ -1,0 +1,31 @@
+.card-dtl {
+  width: 100%;  
+  height: 20rem;
+  padding-top: 3px;
+  /* padding-right: 1px; */
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.card-image {
+  width: 100%;  
+  max-height: 150px;
+  object-fit: contain;
+  padding-top: 3px;
+}
+
+.card-item{
+    text-align: center;
+}
+
+.card-image:hover {
+    transform: scale(1.2);
+}
+.card-dtl:hover {
+    transform: scale(1.03);
+}
+
+.product-review{
+    color: #4284f5;
+}

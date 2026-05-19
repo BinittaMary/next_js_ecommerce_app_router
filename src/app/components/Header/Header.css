@@ -1,0 +1,39 @@
+hover-effect:hover{
+border: solid 2px #ffff;
+}
+
+.custom-search{
+  width: 400px;
+}
+
+.hover-effect-yellow:hover{
+border: solid 4px #FFBF00;
+}
+
+#select-search{
+width: 45px;
+background-color: #F8F8F8;
+border-radius: 2px;
+}
+#select-sort{
+width: 500px;
+background-color: #F8F8F8;
+border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#Country-dropdown{
+width: 45px;
+background-color: lightgray;
+border-radius: 2px;
+}
+.main-header{
+  background-color: black;
+}
+
+.navbar-bg-color{
+ background-color: #232F3E; 
+}
+#search-word{
+  color:#FFAA33;
+}

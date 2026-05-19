@@ -1,0 +1,23 @@
+.category-box{
+ width:10%; 
+ margin: 5px 0 5px 0;
+ height: auto;   
+ display:flex ;
+ flex-direction: column;
+ align-items: center;
+}
+.category-box-image
+{
+    background-size: contain;
+    width : 100px;
+    height : 100px;
+}
+
+
+.category-box-label
+{
+    font-size: 15px;
+    text-align: left;
+    padding-left: 3px;
+    font-weight: lighter;
+}
