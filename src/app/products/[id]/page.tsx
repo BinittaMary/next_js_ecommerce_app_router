@@ -67,8 +67,7 @@ export default async function ProductDetail({
 
           <h2
             className="fw-bold text-capitalize"
-            style={{ color: "#3b92a1" }}
-          >
+            style={{ color: "#3b92a1" }}          >
             {product.category}
           </h2>
 

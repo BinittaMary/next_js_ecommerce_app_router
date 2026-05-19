@@ -6,7 +6,7 @@ import { getProducts } from '../services/ProductsServices';
 
 async function  Products() {
   const products = await getProducts();
-  // console.log('fetch product', products);
+  console.log('fetch product', products);
   return (
     <div className="container-fluid bg-light py-4">
       <div className="row">

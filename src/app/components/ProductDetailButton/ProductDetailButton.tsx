@@ -8,7 +8,7 @@ interface Props{
 
 function ProductDetailButton(props : Props) {
     const router = useRouter();
-    console.log('Product ID',props.id);
+    // console.log('Product ID',props.id);
   return (
     <button className='btn btn-outline-success mt-2' onClick={()=> {
        router.push(`/products/${props.id}`); 
