@@ -4,8 +4,16 @@ export async function getProducts() {
   });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch products");
+    throw new Error(`Failed to fetch products: ${res.status}`);
   }
 
-  return await res.json();
+  const contentType = res.headers.get("content-type");
+
+  if (!contentType || !contentType.includes("application/json")) {
+    const text = await res.text();
+    console.error("API returned non-JSON response:", text);
+    throw new Error("API did not return valid JSON");
+  }
+
+  return res.json();
 }
