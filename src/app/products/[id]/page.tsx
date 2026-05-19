@@ -2,6 +2,13 @@ import ProductAddButton from "@/app/components/ProductAddButton/ProductAddButton
 import styles from "../../page.module.css";
 import Image from "next/image";
 import React from "react";
+import { getProduct } from "@/app/services/ProductsServices";
+
+interface ProductPageProps {
+ params: Promise<{
+    id: string;
+  }>;
+}
 
 function createRating(count: number, fill: string) {
   const stars = [];
@@ -19,20 +26,26 @@ function createRating(count: number, fill: string) {
   return stars;
 }
 
-export default function ProductDetail({ product }: any) {
+export default async function ProductDetail({
+  params,
+}: ProductPageProps) {
+  const { id } = await params;
+  const product = await getProduct(id);
+
   if (!product) {
     return <h1>Oops! Product not found</h1>;
   }
 
-  const shade = Math.round(product.rating?.rate || 0);
+  const shade = Math.round(product.rating || 0);
   const unshade = 5 - shade;
 
   return (
     <div className="container">
       <div className="row mb-2">
+
         <div className="col-sm-4 col-md-4 col-lg-4">
           <Image
-            src={product.image}
+            src={product.images[0]}
             alt="product image"
             className={`img-fluid rounded-3 my-5 pe-5 ${styles.productDtlImage}`}
             width={350}
@@ -42,19 +55,30 @@ export default function ProductDetail({ product }: any) {
         </div>
 
         <div className="col-sm-8 col-md-8 col-lg-8">
+
           <hr className="py-3" />
 
-          <h1 className="fw-bold text-capitalize" style={{ color: "#080d47" }}>
+          <h1
+            className="fw-bold text-capitalize"
+            style={{ color: "#080d47" }}
+          >
             {product.title}
           </h1>
 
-          <h2 className="fw-bold text-capitalize" style={{ color: "#3b92a1" }}>
+          <h2
+            className="fw-bold text-capitalize"
+            style={{ color: "#3b92a1" }}
+          >
             {product.category}
           </h2>
 
-          <h3 className="fw-bold text-capitalize">{product.brand}</h3>
+          <h3 className="fw-bold text-capitalize">
+            {product.brand}
+          </h3>
 
-          <h4 className="fw-bold text-danger">₹ {product.price}</h4>
+          <h4 className="fw-bold text-danger">
+            ₹ {product.price}
+          </h4>
 
           <div className="d-flex align-items-center">
             <span>
@@ -68,6 +92,7 @@ export default function ProductDetail({ product }: any) {
           <div className="text-center">
             <ProductAddButton product={product} />
           </div>
+
         </div>
       </div>
     </div>

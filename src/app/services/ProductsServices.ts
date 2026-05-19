@@ -1,19 +1,38 @@
+// 
+
 export async function getProducts() {
-  const res = await fetch("https://fakestoreapi.com/products", {
+  const res = await fetch("https://dummyjson.com/products", {
     cache: "no-store",
   });
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch products: ${res.status}`);
+    throw new Error("Failed to fetch products");
   }
 
-  const contentType = res.headers.get("content-type");
+  const data = await res.json();
+  return data.products;
+}
 
-  if (!contentType || !contentType.includes("application/json")) {
+export async function getProduct(id: string) {
+  try {
+    const res = await fetch(`https://dummyjson.com/products/${id}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      return null;
+    }
+
     const text = await res.text();
-    console.error("API returned non-JSON response:", text);
-    throw new Error("API did not return valid JSON");
-  }
 
-  return res.json();
+    // Prevent parsing empty response
+    if (!text) {
+      return null;
+    }
+
+    return JSON.parse(text);
+  } catch (error) {
+    console.error("Failed to fetch product:", error);
+    return null;
+  }
 }

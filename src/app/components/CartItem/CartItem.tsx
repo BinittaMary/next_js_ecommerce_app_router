@@ -17,7 +17,7 @@ function CartItem(props:Props) {
     <div>
           <div className="row mb-4 d-flex justify-content-between align-items-center">
             <div className="col-md-2 col-lg-2 col-xl-2">
-                <Image src={cartItem.image} alt="Product Image" className="img-fluid rounded-3 cart-image " width={100} height={100} style={{ width: "100%" }}/>
+                <Image src={cartItem.images[0]} alt="Product Image" className="img-fluid rounded-3 cart-image " width={100} height={100} style={{ width: "100%" }}/>
             </div>
                 <div className="col-md-3 col-lg-3 col-xl-3">
                    <h6 className="text-muted">{cartItem.title}</h6>

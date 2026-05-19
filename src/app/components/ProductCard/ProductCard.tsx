@@ -12,7 +12,7 @@ interface Props {
 
 function ProductCard(props : Props) {
         const prod=props.product;
-        const shade = Math.round(prod.rating?.rate || 0);
+        const shade = Math.round(prod.rating || 0);
         const unshade = 5 - shade;
         function createRating(count : number, fill : string) {
                 const stars = [];
@@ -29,7 +29,7 @@ function ProductCard(props : Props) {
         return ( 
                 <div className="col-lg-3 col-md-4 col-sm-6 mb-4 ">
                 <div className="card card-dtl ">
-                    <Image src={prod.image} alt={"Product Image"} className="card-img-top card-image pt-2" width={100} height={100} />
+                    <Image src={prod.images[0]} alt={"Product Image"} className="card-img-top card-image pt-2" width={100} height={100} />
                     <div className="card-body text-center ">
                         <h4 className="card-title fw-bold category text-capitalize">{prod.category}</h4>
                         <p className="card-text lh-1">{prod.title} </p>
