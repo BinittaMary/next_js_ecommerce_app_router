@@ -4,6 +4,7 @@ import logoImage from '../../assets/logo.png';
 import Image from 'next/image';
 import './Header.css'
 import CartCountHeader from '../CartCountHeader/CartCountHeader';
+import SearchForm from '../SearchForm/SearchForm';
 
 function Header() {
     
@@ -14,9 +15,7 @@ function Header() {
                     <Image src={logoImage} alt={"Logo"} width={100} height={25}></Image>
                  </Link>`
 
-        <form className="d-flex flex-grow-1 mx-2 ">
-        <input className="form-control hover-effect-yellow custom-search" type="search" placeholder="Search" ></input>
-        </form>
+        <SearchForm />
 
        <ul className="navbar-nav ms-3 mt-2 d-none d-lg-flex">
         <li className="nav-item hover-effect ">
