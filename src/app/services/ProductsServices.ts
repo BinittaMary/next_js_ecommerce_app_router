@@ -1,6 +1,11 @@
 export async function getProducts() {
-const res= await fetch('https://fakestoreapi.com/products',{
-  cache :"no-store"
-});
-return res.json();
+  const res = await fetch("https://fakestoreapi.com/products", {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch products");
+  }
+
+  return await res.json();
 }
