@@ -1,4 +1,4 @@
-import { Offer } from '@/app/types/Products';
+import { Offer } from '@/app/types/products';
 import React from 'react'
 import OfferBox from '../OfferBox/OfferBox';
 

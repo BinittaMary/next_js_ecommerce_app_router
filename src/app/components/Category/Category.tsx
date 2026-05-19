@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import {Category as category} from '../../types/Products';
+import {Category as category} from '../../types/products';
 import CategoryBox from '../CategoryBox/CategoryBox';
 
 interface Props {

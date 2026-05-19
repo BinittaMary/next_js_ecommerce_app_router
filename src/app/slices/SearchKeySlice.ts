@@ -1,4 +1,4 @@
-import { SearchWord } from "@/types/searchKey";
+import { SearchWord } from "../types/searchKey";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 

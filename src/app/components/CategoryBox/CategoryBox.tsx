@@ -1,7 +1,7 @@
 import React from 'react';
 import './CategoryBox.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Category } from '@/app/types/Products';
+import { Category } from '@/app/types/products';
 import Image from 'next/image';
 
 interface Props {

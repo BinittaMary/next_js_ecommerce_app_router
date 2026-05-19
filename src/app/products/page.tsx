@@ -1,5 +1,6 @@
 import React from 'react'
 import FilterProducts from '../components/FilterProducts/FilterProducts';
+import { getProducts } from '../services/ProductsServices';
 
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../ProductCard/ProductCard.css';
-import { Product } from '@/app/types/Products';
+import { Product } from '@/app/types/products';
 import Image from 'next/image';
 import ProductDetailButton from '../ProductDetailButton/ProductDetailButton';
 import ProductAddButton from '../ProductAddButton/ProductAddButton';

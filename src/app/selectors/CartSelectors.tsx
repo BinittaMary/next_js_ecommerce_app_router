@@ -1,5 +1,5 @@
 // cartSelectors.ts
-import {  } from "../store/store";
+import { RootState } from "../store/store";
 import { CartItem } from "../types/cart"
 
 export const selectCartItems = (state: RootState) =>
