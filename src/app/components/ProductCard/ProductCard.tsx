@@ -12,7 +12,6 @@ interface Props {
 
 function ProductCard(props : Props) {
         const prod=props.product;
-        console.log('prod', prod);
         const shade = Math.round(prod.rating?.rate || 0);
         const unshade = 5 - shade;
         function createRating(count : number, fill : string) {
